@@ -16,7 +16,14 @@ const Post = ({ post, setCurrentId }) => {
 
   return (
     <Card className={classes.card}>
-      <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
+      <CardMedia
+        className={classes.media}
+        image={
+          post.selectedFile ||
+          "https://thumbs.dreamstime.com/z/back-view-portrait-contemporary-web-developer-writing-code-program-sitting-desk-working-startup-project-modern-116658678.jpg"
+        }
+        title={post.title}
+      />
       <div className={classes.overlay}>
         <Typography variant="h6">{post.creator}</Typography>
         <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
