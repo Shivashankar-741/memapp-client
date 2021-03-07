@@ -5,9 +5,11 @@ import { useSelector } from "react-redux";
 import { Grid, CircularProgress } from "@material-ui/core";
 
 const Posts = ({ setCurrentId }) => {
+  console.log(setCurrentId);
+
   const classes = useStyles();
   const posts = useSelector((state) => state.posts);
-  console.log(posts);
+  // console.log(posts);
 
   return !posts.length ? (
     <CircularProgress />
