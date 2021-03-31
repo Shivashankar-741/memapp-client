@@ -7,7 +7,7 @@ import useStyles from "./styles";
 import { createPost, updatePost } from "../../actions/posts";
 
 const Form = ({ currentId, setCurrentId }) => {
-  console.log(currentId);
+  // console.log(currentId);
 
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const Form = ({ currentId, setCurrentId }) => {
     currentId ? state.posts.find((p) => p._id === currentId) : null
   );
 
-  console.log(post);
+  // console.log(post);
 
   useEffect(() => {
     if (post) setPostData(post);

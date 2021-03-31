@@ -23,6 +23,7 @@ const Auth = () => {
   const handleShowPassword = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
@@ -44,7 +45,7 @@ const Auth = () => {
   };
 
   const googleSuccess = async (res) => {
-    console.log(res);
+    // console.log(res);
 
     const result = res?.profileObj;
     const token = res?.tokenId;
@@ -57,8 +58,9 @@ const Auth = () => {
     }
   };
 
-  const googleError = () => {
-    console.log("Google sign in was successful. Try again later");
+  const googleError = (error) => {
+    console.log(error);
+    console.log("Google sign in was Unsuccessful. Try again later");
   };
 
   return (

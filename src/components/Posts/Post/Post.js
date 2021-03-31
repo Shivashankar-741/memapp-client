@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 import { deletePost, likePost } from "../../../actions/posts";
 
 const Post = ({ post, setCurrentId }) => {
-  console.log(setCurrentId);
+  // console.log(setCurrentId);
 
   const classes = useStyles();
   const dispatch = useDispatch();
