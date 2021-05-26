@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { Avatar, Button, Paper, Grid, Typography, Container } from "@material-ui/core";
-import { useDispatch } from "react-redux";
-import useStyles from "./styles";
-import { useHistory } from "react-router-dom";
-import { GoogleLogin } from "react-google-login";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import Input from "./Input";
-import Icon from "./icon";
-import { signin, signup } from "../../actions/auth";
+import React, { useState } from 'react';
+import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+import useStyles from './styles';
+import { useHistory } from 'react-router-dom';
+import { GoogleLogin } from 'react-google-login';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Input from './Input';
+import Icon from './icon';
+import { signin, signup } from '../../actions/auth';
 
-const initialState = { firstName: "", lastName: "", email: "", password: "", confirmPassword: "" };
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
 const Auth = () => {
   const classes = useStyles();
@@ -51,8 +51,8 @@ const Auth = () => {
     const token = res?.tokenId;
 
     try {
-      dispatch({ type: "AUTH", data: { result, token } });
-      history.push("/");
+      dispatch({ type: 'AUTH', data: { result, token } });
+      history.push('/');
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +60,7 @@ const Auth = () => {
 
   const googleError = (error) => {
     console.log(error);
-    console.log("Google sign in was Unsuccessful. Try again later");
+    console.log('Google sign in was Unsuccessful. Try again later');
   };
 
   return (
@@ -70,7 +70,7 @@ const Auth = () => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          {isSignup ? "Sign up" : "Sign in"}
+          {isSignup ? 'Sign up' : 'Sign in'}
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
@@ -91,7 +91,7 @@ const Auth = () => {
               name="password"
               label="Password"
               handleChange={handleChange}
-              type={showPassword ? "text" : "password"}
+              type={showPassword ? 'text' : 'password'}
               handleShowPassword={handleShowPassword}
             />
             {isSignup && (
@@ -110,10 +110,10 @@ const Auth = () => {
             color="primary"
             className={classes.submit}
           >
-            {isSignup ? "Sign Up" : "Sign In"}
+            {isSignup ? 'Sign Up' : 'Sign In'}
           </Button>
           <GoogleLogin
-            clientId="680389148837-lbnjgestvctvarnd8lkehf5tjoh2ldig.apps.googleusercontent.com"
+            clientId="680389148837-1pbmicfq8hu52gl5mkaot1nf7das64tq.apps.googleusercontent.com"
             render={(renderProps) => (
               <Button
                 className={classes.googleButton}
@@ -134,7 +134,7 @@ const Auth = () => {
           <Grid container justify="flex-end">
             <Grid item>
               <Button onClick={switchMode}>
-                {isSignup ? "Already have an account? Sign in" : "Don't have an account? Sign Up"}
+                {isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up"}
               </Button>
             </Grid>
           </Grid>
